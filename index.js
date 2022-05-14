@@ -11,61 +11,47 @@ const client = new Client({
 })
 
 client.on('ready', () => {
-  const guildID = "895704892021288971"
-  const guild = client.guilds.cache.get(guildID)
-  let commands
+  client.user.setActivity('quoi ? feur xD', { type: 'PLAYING' })
 
-  if (guild) {
-    commands = guild.commands
-  } else {
-    commands = client.application.commands
-  }
-
-  commands?.create({
-    name: "ping",
-    description: "Renvoie pong si le bot est allumé"
-  })
-  commands?.create({
-    name: "repeat",
-    description: "Renvoie le message",
-    options: [
-      {
-        name: "text",
-        description: "Le texte a envoyer",
-        required: true,
-        type: Constants.ApplicationCommandOptionTypes.STRING
-      }
-    ]
-  })
-
-
-
-  client.user.setPresence({
-    game: {
-      name: 'Use f!help',
-      type: "Playing",
-      url: "https://discordapp.com/"
-    }
-  });
-
-  client.user.setActivity()
   console.log("The bot is ready !")
 })
 
-client.on('interactionCreate', async (interaction) => {
-  if (interaction.isCommand()) {
-    const { commandName, options } = interaction
+client.on("messageCreate", (message) => {
+  let endWord = message.content.split(" ").pop()
 
-    if (commandName == "ping") {
-      let file = require('./commands/ping')
-      let instance = new file
-      instance.exec(interaction);
-    } else if (commandName == "repeat") {
-      let file = require('./commands/repeat')
-      let instance = new file
-      instance.exec(interaction, options.getString("text"));
-    }
+  if (endWord.toLowerCase() === "quoi") {
+    message.channel.send("feur")
+  } else if (endWord.toLowerCase() === "kwa") {
+    message.channel.send("feur")
+  } else if (endWord.toLowerCase() === "pourquoi") {
+    message.channel.send("feur")
   }
+  if (endWord.toLowerCase() === "1") {
+    message.channel.send("2")
+  } else if (endWord.toLowerCase() === "hein") {
+    message.channel.send("2")
+  } else if (endWord.toLowerCase === "hein?") {
+    message.channel.send("2")
+  }
+
+  if (endWord.toLowerCase() === "ah") {
+    message.channel.send("b")
+  } else if (endWord.toLowerCase() === "a") {
+    message.channel.send("b")
+  }
+
+  if (endWord.toLowerCase() === "toi") {
+    message.channel.send("lette")
+  }
+
+  if (endWord.toLowerCase() === "tg") {
+    message.channel.send("non")
+  }
+
+  if (endWord.toLowerCase() === "si") {
+    message.channel.send("non")
+  }
+
 })
 
 client.login(process.env.TOKEN);
