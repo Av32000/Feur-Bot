@@ -18,7 +18,16 @@ client.on('ready', () => {
 })
 
 client.on("messageCreate", (message) => {
-  let endWord = message.content.split(" ").pop()
+  let words = message.content.split(" ")
+
+  message.content.split(" ").forEach(element => {
+    if (element === "." || element === "!" || element === "?") {
+      words.splice(words.indexOf(element), 1)
+    }
+  });
+
+
+  let endWord = words.pop()
 
   if (endWord.toLowerCase() === "quoi") {
     message.channel.send("feur")
