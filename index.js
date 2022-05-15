@@ -12,6 +12,7 @@ const client = new Client({
 
 client.on('ready', () => {
   client.user.setActivity('quoi ? feur xD', { type: 'PLAYING' })
+  client.user.setUsername('Quoi-Feur bot')
 
   console.log("The bot is ready !")
 })
@@ -42,6 +43,10 @@ client.on("messageCreate", (message) => {
 
   if (endWord.toLowerCase() === "toi") {
     message.channel.send("lette")
+  } else if (endWord.toLowerCase() === "twa") {
+    message.channel.send("lette")
+  } else if (endWord.toLowerCase() === "toua") {
+    message.channel.send("lette")
   }
 
   if (endWord.toLowerCase() === "tg") {
@@ -50,6 +55,16 @@ client.on("messageCreate", (message) => {
 
   if (endWord.toLowerCase() === "si") {
     message.channel.send("non")
+  }
+
+  if (endWord.toLowerCase() === "non") {
+    message.channel.send("bril")
+  }
+
+  if (endWord.toLowerCase() === "oui") {
+    message.channel.send("fi")
+  } else if (endWord.toLowerCase() === "wi") {
+    message.channel.send("fi")
   }
 
 })
