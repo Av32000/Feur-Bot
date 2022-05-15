@@ -12,7 +12,7 @@ const client = new Client({
 
 client.on('ready', () => {
   client.user.setActivity('quoi ? feur xD', { type: 'PLAYING' })
-  client.user.setUsername('Quoi-Feur bot')
+  client.user.setUsername('Quoi?')
 
   console.log("The bot is ready !")
 })
