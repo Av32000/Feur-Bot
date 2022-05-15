@@ -58,6 +58,14 @@ client.on("messageCreate", (message) => {
     message.channel.send("lette")
   }
 
+  if (endWord.toLowerCase() === "1") {
+    message.channel.send("2")
+  } else if (endWord.toLowerCase() === "hein") {
+    message.channel.send("2")
+  } else if (endWord.toLowerCase === "hein?") {
+    message.channel.send("2")
+  }
+
   if (endWord.toLowerCase() === "tg") {
     message.channel.send("non")
   }
