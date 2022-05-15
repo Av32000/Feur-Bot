@@ -72,6 +72,10 @@ client.on("messageCreate", (message) => {
     message.channel.send("fi")
   }
 
+  if (endWord.toLowerCase() === "mais") {
+    message.channel.send("on")
+  }
+
 })
 
 client.login(process.env.TOKEN);
