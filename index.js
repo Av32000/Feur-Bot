@@ -53,10 +53,6 @@ client.on("messageCreate", (message) => {
     message.channel.send("non")
   }
 
-  if (endWord.toLowerCase() === "si") {
-    message.channel.send("non")
-  }
-
   if (endWord.toLowerCase() === "non") {
     message.channel.send("bril")
   }
