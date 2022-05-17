@@ -76,6 +76,10 @@ client.on("messageCreate", (message) => {
     message.channel.send("on")
   }
 
+  if (endWord.toLowerCase() === "pues") {
+    message.channel.send("toi")
+  }
+
 })
 
 client.login(process.env.TOKEN);
