@@ -78,6 +78,8 @@ client.on("messageCreate", (message) => {
 
   if (endWord.toLowerCase() === "pues") {
     message.channel.send("toi")
+  } else if (endWord.toLowerCase() === "pue") {
+    message.channel.send("toi")
   }
 
 })
