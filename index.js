@@ -28,6 +28,13 @@ client.on("messageCreate", (message) => {
     .setFooter("Feur-Bot by @Av32000#9052")
 
 
+  let patchNoteEmbed = new MessageEmbed()
+    .setTitle("PatchNote")
+    .setColor("#0099ff")
+    .setDescription("PatchNote du bot")
+    .addField("PatchNote : ", "- Retrait d'import inutile\n- Ajout de la commande f?help\n-Ajout de la commande f?patchNote")
+    .setFooter("Feur-Bot by @Av32000#9052 | Patch note du 21/05/2022")
+
   let words = message.content.split(" ")
 
   message.content.split(" ").forEach(element => {
@@ -95,6 +102,13 @@ client.on("messageCreate", (message) => {
   if (message.content == "f?help") {
     message.channel.send({
       embeds: [helpEmbed]
+    })
+    message.delete()
+  }
+
+  if (message.content == "f?patchNote") {
+    message.channel.send({
+      embeds: [patchNoteEmbed]
     })
     message.delete()
   }
