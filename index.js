@@ -38,7 +38,7 @@ client.on("messageCreate", (message) => {
   let words = message.content.split(" ")
 
   message.content.split(" ").forEach(element => {
-    if (element === "." || element === "!" || element === "?") {
+    if (element.startsWith(".") || element.startsWith("!") || element.startsWith("?")) {
       words.splice(words.indexOf(element), 1)
     }
   });
