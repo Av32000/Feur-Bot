@@ -24,3 +24,4 @@ Ajoutez le bot a votre serveur !
 - non => bril
 - oui => fi
 - mais => on
+- pues => toi
