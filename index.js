@@ -23,7 +23,7 @@ client.on("messageCreate", (message) => {
     .setColor("#0099ff")
     .setDescription("Un simple bot discord répondant de facon très insuportable aux messages des utilisateurs en faisant des jeux de mots.\nSur un harcèlement original de Miirage#3507\n\nExemple d'utilisation :\n\n\`\`\`\nUser1 : Tu as prévu quoi ?\nBot : Feur\nUser2 : Rien de particulier et toi ?\nBot : lette\`\`\`\n")
     .addField("Jeux de mots", "- \`Quoi\` => Feur\n- \`Hein\` => 2\n- \`Ah\` => b\n- \`Toi\` => lette\n- \`tg\` => non\n- \`Non\` => bril\n- \`Oui\` => fi\n- \`Mais\` => on\n- \`Pues\` => toi", true)
-    .addField("Commandes", "- \`f?help\` => Affiche cet embed\n- \`f?patchNote\` => Affiche le patchNote", true)
+    .addField("Commandes", "- \`f?help\` => Affiche cet embed\n- \`f?patchNote\` => Affiche le patchNote\n- \`f?serveurCount\` => Affiche le nombres de serveurs sur lesquels le bot est présent", true)
     .addField("Liens Utiles", "- Lien du Github : https://github.com/Av32000/Feur-Bot\n- Lien d'invitation : https://discord.com/api/oauth2/authorize?client_id=975313345211154492&permissions=274945227776&scope=bot")
     .setFooter("Feur-Bot by @Av32000#9052")
 
@@ -32,7 +32,7 @@ client.on("messageCreate", (message) => {
     .setTitle("PatchNote")
     .setColor("#0099ff")
     .setDescription("PatchNote du bot")
-    .addField("PatchNote : ", "- Retrait d'import inutile\n- Ajout de la commande f?help\n-Ajout de la commande f?patchNote\n- Gestion \`??????\` et des \`!!!!!!\`")
+    .addField("PatchNote : ", "- Retrait d'import inutile\n- Ajout de la commande f?help\n-Ajout de la commande f?patchNote\n- Gestion \`??????\` et des \`!!!!!!\`\n- Ajout de la commande f?serveurCount")
     .setFooter("Feur-Bot by @Av32000#9052 | Patch note du 21/05/2022")
 
   let words = message.content.split(" ")
@@ -99,6 +99,7 @@ client.on("messageCreate", (message) => {
     message.channel.send("toi")
   }
 
+  //Commands
   if (message.content == "f?help") {
     message.channel.send({
       embeds: [helpEmbed]
@@ -111,6 +112,10 @@ client.on("messageCreate", (message) => {
       embeds: [patchNoteEmbed]
     })
     message.delete()
+  }
+
+  if (message.content == "f?serveurCount") {
+    message.channel.send(`Le serveur est actuellement sur ${client.guilds.cache.size} serveurs.`)
   }
 
 })
