@@ -35,7 +35,10 @@ client.on("messageCreate", (message) => {
     message.channel.send("feur")
   } else if (endWord.toLowerCase() === "pourquoi") {
     message.channel.send("feur")
+  } else if (endWord.toLowerCase() === "koi") {
+    message.channel.send("feur")
   }
+
   if (endWord.toLowerCase() === "1") {
     message.channel.send("2")
   } else if (endWord.toLowerCase() === "hein") {
