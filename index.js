@@ -32,7 +32,7 @@ client.on("messageCreate", (message) => {
     .setTitle("PatchNote")
     .setColor("#0099ff")
     .setDescription("PatchNote du bot")
-    .addField("PatchNote : ", "- Prise en charge du \`koi\`")
+    .addField("PatchNote : ", "- Prise en charge du \`koi\`\n- Suppression du message lors de l'utilisation du \`f?serveurCount\`")
     .setFooter("Feur-Bot by @Av32000#9052 | Patch note du 29/05/2022")
 
   let words = message.content.split(" ")
