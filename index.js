@@ -119,6 +119,7 @@ client.on("messageCreate", (message) => {
 
   if (message.content == "f?serveurCount") {
     message.channel.send(`Le bot est actuellement sur ${client.guilds.cache.size} serveurs.`)
+    message.delete()
   }
 
 })
